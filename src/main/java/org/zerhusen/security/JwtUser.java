@@ -15,10 +15,10 @@ public class JwtUser implements UserDetails {
 
     private final Long id;
     private final String username;
-    private final String firstname;
-    private final String lastname;
+    //private final String firstname;
+    //private final String lastname;
     private final String password;
-    private final String email;
+    //private final String email;
     private final Collection<? extends GrantedAuthority> authorities;
     private final boolean enabled;
     private final Date lastPasswordResetDate;
@@ -26,18 +26,20 @@ public class JwtUser implements UserDetails {
     public JwtUser(
           Long id,
           String username,
-          String firstname,
-          String lastname,
-          String email,
-          String password, Collection<? extends GrantedAuthority> authorities,
+          //String firstname,
+          //String lastname,
+          //String email,
+          String password, 
+          Collection<? extends GrantedAuthority> authorities,
           boolean enabled,
           Date lastPasswordResetDate
-    ) {
+    ) 
+    {
         this.id = id;
         this.username = username;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
+        //this.firstname = firstname;
+        //this.lastname = lastname;
+        //this.email = email;
         this.password = password;
         this.authorities = authorities;
         this.enabled = enabled;
@@ -71,7 +73,7 @@ public class JwtUser implements UserDetails {
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
+    /**
     public String getFirstname() {
         return firstname;
     }
@@ -83,7 +85,7 @@ public class JwtUser implements UserDetails {
     public String getEmail() {
         return email;
     }
-
+    **/
     @JsonIgnore
     @Override
     public String getPassword() {
@@ -104,4 +106,5 @@ public class JwtUser implements UserDetails {
     public Date getLastPasswordResetDate() {
         return lastPasswordResetDate;
     }
+   
 }

@@ -58,17 +58,18 @@ public class JwtAuthorizationTokenFilter extends OncePerRequestFilter {
             // It is not compelling necessary to load the use details from the database. You could also store the information
             // in the token and read it from it. It's up to you ;)
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
-
+            logger.debug("" + userDetails + "");
             // For simple validation it is completely sufficient to just check the token integrity. You don't have to call
             // the database compellingly. Again it's up to you ;)
             if (jwtTokenUtil.validateToken(authToken, userDetails)) {
+                logger.debug("aaaaaaaa");
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 logger.info("authorizated user '{}', setting security context", username);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         }
-
+        logger.debug("Pase");
         chain.doFilter(request, response);
     }
 }
