@@ -39,7 +39,7 @@ public class User {
     @Size(min = 4, max = 100)
     private String password;
 
-    @Column(name = "FIRSTNAME", length = 50)
+   /* @Column(name = "FIRSTNAME", length = 50)
     @NotNull
     @Size(min = 4, max = 50)
     private String firstname;
@@ -52,7 +52,7 @@ public class User {
     @Column(name = "EMAIL", length = 50)
     @NotNull
     @Size(min = 4, max = 50)
-    private String email;
+    private String email;*/
 
     @Column(name = "ENABLED")
     @NotNull
@@ -94,7 +94,7 @@ public class User {
         this.password = password;
     }
 
-    public String getFirstname() {
+   /* public String getFirstname() {
         return firstname;
     }
 
@@ -116,7 +116,7 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 
     public Boolean getEnabled() {
         return enabled;
