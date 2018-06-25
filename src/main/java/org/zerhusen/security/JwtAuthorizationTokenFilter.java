@@ -20,9 +20,9 @@ public class JwtAuthorizationTokenFilter extends OncePerRequestFilter {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private UserDetailsService userDetailsService;
-    private JwtTokenUtil jwtTokenUtil;
-    private String tokenHeader;
+    private final UserDetailsService userDetailsService;
+    private final JwtTokenUtil jwtTokenUtil;
+    private final String tokenHeader;
 
     public JwtAuthorizationTokenFilter(UserDetailsService userDetailsService, JwtTokenUtil jwtTokenUtil, String tokenHeader) {
         this.userDetailsService = userDetailsService;
