@@ -18,10 +18,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Carrera {
     
-    public Carrera(int idCarrera, String nombreCarrera, String detalleCarrera){
-        this.idCarrera = idCarrera;
-        this.nombreCarrera = nombreCarrera;
-        this.detalleCarrera = detalleCarrera;
+    public Carrera(int id, String nombre, String detalle){
+        this.id = id;
+        this.nombre = nombre;
+        this.detalle = detalle;
     }
 
     public Carrera() {
@@ -31,37 +31,39 @@ public class Carrera {
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int idCarrera;
+    private int id;
     
     @NotNull (message = "Campo obligatorio")
-    private String nombreCarrera;
+    private String nombre;
     
     @NotNull (message = "Campo obligatorio")
-    private String detalleCarrera;
+    private String detalle;
 
-    public int getIdCarrera() {
-        return idCarrera;
+    public int getId() {
+        return id;
     }
 
-    public void setIdCarrera(int idCarrera) {
-        this.idCarrera = idCarrera;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreCarrera() {
-        return nombreCarrera;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCarrera(String nombreCarrera) {
-        this.nombreCarrera = nombreCarrera;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDetalleCarrera() {
-        return detalleCarrera;
+    public String getDetalle() {
+        return detalle;
     }
 
-    public void setDetalleCarrera(String detalleCarrera) {
-        this.detalleCarrera = detalleCarrera;
+    public void setDetalle(String detalle) {
+        this.detalle = detalle;
     }
+
+    
     
     
 }

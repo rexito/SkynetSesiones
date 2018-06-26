@@ -64,7 +64,7 @@ public class DocenteController {
         Optional<Docente> docente = DocenteRepository.findById(id);
         if (docente != null) {
 
-            actualizarDocente.setIdDocente(id);
+            actualizarDocente.setId(id);
             DocenteRepository.save(actualizarDocente);
             return new ResponseEntity<>(docente, HttpStatus.OK);
         } else {

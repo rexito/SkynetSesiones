@@ -64,7 +64,7 @@ public class HorarioController {
         Optional<Horario> horario = HorarioRepository.findById(id);
         if (horario != null) {
 
-            actualizarHorario.setIdHorario(id);
+            actualizarHorario.setId(id);
             HorarioRepository.save(actualizarHorario);
             return new ResponseEntity<>(horario, HttpStatus.OK);
         } else {

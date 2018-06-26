@@ -19,52 +19,51 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Jornada {
     
-   public Jornada(int idJornada, String nombreJornada, String detalleJornada) {
-        this.idJornada = idJornada;
-        this.nombreJornada = nombreJornada;
-        this.detalleJornada = detalleJornada;
+   public Jornada(int id, String nombre, String detalle) {
+        this.id = id;
+        this.nombre = nombre;
+        this.detalle = detalle;
     }
    
    
    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idJornada;
+    private int id;
     
     @NotNull (message = "Campo Obligatorio")
-    private String nombreJornada;
+    private String nombre;
     
     @NotNull (message = "Campo Obligatorio")
-    private String detalleJornada;
+    private String detalle;
 
     public Jornada() {
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDetalle() {
+        return detalle;
+    }
+
+    public void setDetalle(String jornada) {
+        this.detalle = jornada;
+    }
     
-    public int getIdJornada() {
-        return idJornada;
-    }
-
-    public void setIdJornada(int idJornada) {
-        this.idJornada = idJornada;
-    }
-
-    public String getNombreJornada() {
-        return nombreJornada;
-    }
-
-    public void setNombreJornada(String nombreJornada) {
-        this.nombreJornada = nombreJornada;
-    }
-
-    
-    
-    public String getDetalleJornada() {
-        return detalleJornada;
-    }
-
-    public void setDetalleJornada(String detalleJornada) {
-        this.detalleJornada = detalleJornada;
-    }
     
     
     }

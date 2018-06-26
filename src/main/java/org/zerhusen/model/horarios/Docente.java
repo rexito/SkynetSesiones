@@ -23,44 +23,45 @@ public class Docente {
     public Docente(){
     }
     
-    public Docente(int idDocente, String nombreDocente, String apellidoDocente) {
-        this.idDocente = idDocente;
-        this.nombreDocente = nombreDocente;
-        this.apellidoDocente = apellidoDocente;
+    public Docente(int id, String nombre, String apellido) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idDocente;
+    private int id;
     
     @NotNull (message = "Campo Obligatorio")
-    private String nombreDocente;
+    private String nombre;
     
     @NotNull (message = "Campo Obligatorio")
-    private String apellidoDocente;
+    private String apellido;
 
-    public int getIdDocente() {
-        return idDocente;
+    public int getId() {
+        return id;
     }
 
-    public void setIdDocente(int idDocente) {
-        this.idDocente = idDocente;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreDocente() {
-        return nombreDocente;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreDocente(String nombreDocente) {
-        this.nombreDocente = nombreDocente;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellidoDocente() {
-        return apellidoDocente;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidoDocente(String apellidoDocente) {
-        this.apellidoDocente = apellidoDocente;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
-    
+
+   
     
 }

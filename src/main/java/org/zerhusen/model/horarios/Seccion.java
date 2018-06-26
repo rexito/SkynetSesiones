@@ -22,9 +22,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Seccion {
     
-    public Seccion (int idSeccion, String nombreSeccion, Jornada jornada, Carrera carrera){
-        this.idSeccion = idSeccion;
-        this.nombreSeccion = nombreSeccion;
+    public Seccion (int id, String nombre, Jornada jornada, Carrera carrera){
+        this.id = id;
+        this.nombre = nombre;
         this.jornada = jornada;
         this.carrera = carrera;
     }
@@ -36,10 +36,10 @@ public class Seccion {
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int idSeccion;
+    private int id;
     
     @NotNull (message = "Campo Obligatorio")
-    private String nombreSeccion;
+    private String nombre;
     
     @JoinColumn(name = "id_jornada")
     @OneToOne
@@ -49,20 +49,20 @@ public class Seccion {
     @OneToOne
     private Carrera carrera;
 
-    public int getIdSeccion() {
-        return idSeccion;
+    public int getId() {
+        return id;
     }
 
-    public void setIdSeccion(int idSeccion) {
-        this.idSeccion = idSeccion;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreSeccion() {
-        return nombreSeccion;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreSeccion(String nombreSeccion) {
-        this.nombreSeccion = nombreSeccion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Jornada getJornada() {
@@ -80,7 +80,6 @@ public class Seccion {
     public void setCarrera(Carrera carrera) {
         this.carrera = carrera;
     }
-    
-    
+
     
 }

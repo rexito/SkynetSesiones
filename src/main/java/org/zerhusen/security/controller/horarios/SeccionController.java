@@ -64,7 +64,7 @@ public class SeccionController {
         Optional<Seccion> seccion = SeccionRepository.findById(id);
         if (seccion != null) {
 
-            actualizarSeccion.setIdSeccion(id);
+            actualizarSeccion.setId(id);
             SeccionRepository.save(actualizarSeccion);
             return new ResponseEntity<>(seccion, HttpStatus.OK);
         } else {

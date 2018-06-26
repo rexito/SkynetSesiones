@@ -5,6 +5,7 @@
  */
 package org.zerhusen.model.horarios;
 
+import java.sql.Time;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,10 +21,12 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 public class Horario {
-    public Horario (int idHorario,Asignatura asignatura,Sala sala){
-        this.idHorario = idHorario;
+    public Horario (int id,Asignatura asignatura,Sala sala, Time horaInicio, Time horaTermino){
+        this.id = id;
         this.asignatura = asignatura;
         this.sala = sala;
+        this.horaInicio = horaInicio;
+        this.horaTermino = horaTermino;
     }
 
     public Horario() {
@@ -33,28 +36,32 @@ public class Horario {
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int idHorario;
+    private int id;
     
 
     
     @NotNull (message = "Campo Obligatorio")
     @ManyToOne
-    @JoinColumn(name = "idAsignatura")
+    @JoinColumn(name = "id_asignatura")
     private Asignatura asignatura;
     
     @NotNull (message = "Campo Obligatorio")
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "id_sala")
     private Sala sala;
     
- 
+    @NotNull (message = "Campo Obligatorio")
+    private Time horaInicio;
     
+    @NotNull (message = "Campo Obligatorio")
+    private Time horaTermino;
 
-    public int getIdHorario() {
-        return idHorario;
+    public int getId() {
+        return id;
     }
 
-    public void setIdHorario(int idHorario) {
-        this.idHorario = idHorario;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Asignatura getAsignatura() {
@@ -72,6 +79,25 @@ public class Horario {
     public void setSala(Sala sala) {
         this.sala = sala;
     }
+
+    public Time getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(Time horaInicio) {
+        this.horaInicio = horaInicio;
+    }
+
+    public Time getHoraTermino() {
+        return horaTermino;
+    }
+
+    public void setHoraTermino(Time horaTermino) {
+        this.horaTermino = horaTermino;
+    }
+    
+ 
+    
 
     
     

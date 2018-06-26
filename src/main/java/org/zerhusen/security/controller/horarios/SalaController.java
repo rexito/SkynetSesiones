@@ -64,7 +64,7 @@ public class SalaController {
         Optional<Sala> sala = SalaRepository.findById(id);
         if (sala != null) {
 
-            actualizarSala.setIdSala(id);
+            actualizarSala.setId(id);
             SalaRepository.save(actualizarSala);
             return new ResponseEntity<>(sala, HttpStatus.OK);
         } else {

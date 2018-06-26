@@ -18,51 +18,38 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Sala {
     
-    public Sala (int idSala, String nombreSala, int numeroSala, String piso){
-        this.idSala = idSala;
-        this.nombreSala = nombreSala;
-        this.numeroSala = numeroSala;
+    public Sala (int id, String nombreSala, String piso){
+        this.id = id;
+        this.nombre = nombre;
         this.piso = piso;
     }
 
     public Sala() {
     }
-    
-    
-    
+        
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int idSala;
+    private int id;
     
     @NotNull
-    private String nombreSala;
+    private String nombre;
    
-    private int numeroSala;
-    
     private String piso;
 
-    public int getIdSala() {
-        return idSala;
+    public int getId() {
+        return id;
     }
 
-    public void setIdSala(int idSala) {
-        this.idSala = idSala;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreSala() {
-        return nombreSala;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreSala(String nombreSala) {
-        this.nombreSala = nombreSala;
-    }
-
-    public int getNumeroSala() {
-        return numeroSala;
-    }
-
-    public void setNumeroSala(int numeroSala) {
-        this.numeroSala = numeroSala;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getPiso() {
@@ -72,6 +59,8 @@ public class Sala {
     public void setPiso(String piso) {
         this.piso = piso;
     }
+
+    
     
     
     

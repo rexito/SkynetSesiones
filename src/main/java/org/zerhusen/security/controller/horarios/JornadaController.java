@@ -72,7 +72,7 @@ public class JornadaController {
         Optional<Jornada> jornada = JornadaRepository.findById(id);
         if (jornada != null) {
 
-            actualizarJornada.setIdJornada(id);
+            actualizarJornada.setId(id);
             JornadaRepository.save(actualizarJornada);
             return new ResponseEntity<>(jornada, HttpStatus.OK);
         } else {

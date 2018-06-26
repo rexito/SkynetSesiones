@@ -64,7 +64,7 @@ public class AdministradorController {
         Optional<Administrador> administrador = AdministradorRepository.findById(id);
         if (administrador != null) {
 
-            actualizarAdministrador.setIdAdministrador(id);
+            actualizarAdministrador.setId(id);
             AdministradorRepository.save(actualizarAdministrador);
             return new ResponseEntity<>(administrador, HttpStatus.OK);
         } else {

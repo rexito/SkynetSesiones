@@ -66,7 +66,7 @@ public class AsignaturaController {
         Optional<Asignatura> asignatura = AsignaturaRepository.findById(id);
         if (asignatura != null) {
 
-            actualizarAsignatura.setIdAsignatura(id);
+            actualizarAsignatura.setId(id);
             AsignaturaRepository.save(actualizarAsignatura);
             return new ResponseEntity<>(asignatura, HttpStatus.OK);
         } else {

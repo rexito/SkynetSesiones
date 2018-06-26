@@ -19,10 +19,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Administrador implements Serializable {
     
-    public Administrador (int idAdministrador, String nombreAdministrador, String apellidoAdministrador){
-        this.idAdministrador = idAdministrador;
-        this.nombreAdministrador = nombreAdministrador;
-        this.apellidoAdministrador = apellidoAdministrador;
+    public Administrador (int id, String nombre, String apellido){
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
 
     public Administrador() {
@@ -32,37 +32,38 @@ public class Administrador implements Serializable {
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int idAdministrador;
+    private int id;
     
     @NotNull
-    private String nombreAdministrador;
+    private String nombre;
     
     @NotNull
-    private String apellidoAdministrador;
+    private String apellido;
 
-    public int getIdAdministrador() {
-        return idAdministrador;
+    public int getId() {
+        return id;
     }
 
-    public void setIdAdministrador(int idAdministrador) {
-        this.idAdministrador = idAdministrador;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreAdministrador() {
-        return nombreAdministrador;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreAdministrador(String nombreAdministrador) {
-        this.nombreAdministrador = nombreAdministrador;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellidoAdministrador() {
-        return apellidoAdministrador;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidoAdministrador(String apellidoAdministrador) {
-        this.apellidoAdministrador = apellidoAdministrador;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
-    
+
+   
     
 }

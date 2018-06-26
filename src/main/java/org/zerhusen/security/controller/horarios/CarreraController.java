@@ -64,7 +64,7 @@ public class CarreraController {
         Optional<Carrera> carrera = CarreraRepository.findById(id);
         if (carrera != null) {
 
-            actualizarCarrera.setIdCarrera(id);
+            actualizarCarrera.setId(id);
             CarreraRepository.save(actualizarCarrera);
             return new ResponseEntity<>(carrera, HttpStatus.OK);
         } else {
