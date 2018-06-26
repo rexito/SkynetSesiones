@@ -10,6 +10,7 @@ import org.zerhusen.security.repository.horarios.JornadaRepository;
 import java.util.Collection;
 import java.util.Optional;
 import javax.validation.Valid;
+import jdk.nashorn.internal.runtime.options.Options;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
+import static org.springframework.web.bind.annotation.RequestMethod.OPTIONS;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,10 +42,16 @@ public class JornadaController {
     public Collection<Jornada> getJornada() {
         return JornadaRepository.findAll();
     }
+    //si es que sirve
+     @CrossOrigin
+    @RequestMapping(value = "/*", method = OPTIONS)
+    public ResponseEntity getOptions() {
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
     
     //Petición GET  (Una jornada)
     @CrossOrigin
-    @RequestMapping(value = "/skynet/jornada/{id}", method = GET)
+    @RequestMapping(value = "/*", method = GET)
     public Optional<Jornada> getUnaJornada(@PathVariable Integer id) {
         return JornadaRepository.findById(id);
     }
