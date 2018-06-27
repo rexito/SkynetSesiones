@@ -28,7 +28,7 @@ public class Sala {
     }
         
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
     
     @NotNull

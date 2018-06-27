@@ -28,7 +28,7 @@ public class Jornada {
    
    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
     @NotNull (message = "Campo Obligatorio")
