@@ -23,6 +23,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.zerhusen.model.horarios.Sala;
+import org.zerhusen.model.horarios.Seccion;
 
 /**
  *
@@ -86,6 +88,11 @@ public class HorarioController {
     }
     
     
-  
+    @CrossOrigin
+    @RequestMapping(value = "/skynet/horario/seccion/{id}", method = GET)
+    public Collection<Seccion> getSeccionByCarrera(@PathVariable Integer id) {
+       return HorarioRepository.listaSeccionByCarrera(id);
+    }
+    
     
 }
