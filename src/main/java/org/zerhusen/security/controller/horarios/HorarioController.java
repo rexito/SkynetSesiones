@@ -90,9 +90,14 @@ public class HorarioController {
     
     @CrossOrigin
     @RequestMapping(value = "/skynet/horario/seccion/{id}", method = GET)
-    public Collection<Seccion> getSeccionByCarrera(@PathVariable Integer id) {
+    public Collection<Seccion> getAsignaturaBySeccionByCarrera(@PathVariable Integer id) {
        return HorarioRepository.listaSeccionByCarrera(id);
     }
     
+    @CrossOrigin
+    @RequestMapping(value = "/skynet/horario/carrera/{id}", method = GET)
+    public Collection<Seccion> getSeccionByCarrera(@PathVariable Integer id) {
+       return HorarioRepository.listaSeccionByCarrera(id);
+    }
     
 }
