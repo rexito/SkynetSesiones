@@ -85,4 +85,21 @@ public class SalaController {
         }
     }
     
+    @CrossOrigin
+    @RequestMapping(value = "/skynet/sala/piso1", method = GET)
+    public Collection<Sala> getSalasByPiso1() {
+       return SalaRepository.listaSalaByPiso1("1");
+    }
+    
+    @CrossOrigin
+    @RequestMapping(value = "/skynet/sala/piso2", method = GET)
+    public Collection<Sala> getSalaByPiso2() {
+       return SalaRepository.listaSalaByPiso2("2");
+    }
+    
+    @CrossOrigin
+    @RequestMapping(value = "/skynet/sala/piso3", method = GET)
+    public Collection<Sala> getSalaByPiso3() {
+       return SalaRepository.listaSalaByPiso3("3");
+    }
 }
