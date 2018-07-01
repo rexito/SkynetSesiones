@@ -100,4 +100,10 @@ public class HorarioController {
        return HorarioRepository.listaSeccionByCarrera(id);
     }
     
+    @CrossOrigin
+    @RequestMapping(value = "/skynet/horario/sala/{id}", method = GET)
+    public Collection<Horario> listaHorarioBySala (@PathVariable Integer id){
+        return HorarioRepository.listaHorarioBySala(id);
+    }
+    
 }
