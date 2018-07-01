@@ -45,7 +45,7 @@ public class Asignatura {
     @OneToOne
     private Seccion seccion;
     
-    @NotNull
+    
     @JoinColumn(name = "id_docente")
     @OneToOne
     private Docente docente;

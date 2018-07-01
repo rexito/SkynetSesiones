@@ -21,12 +21,12 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 public class Horario {
-    public Horario (int id,Asignatura asignatura,Sala sala, Time horaInicio, Time horaTermino){
+    public Horario (int id,Asignatura asignatura,Sala sala, int dia, int rangoHora){
         this.id = id;
         this.asignatura = asignatura;
         this.sala = sala;
-        this.horaInicio = horaInicio;
-        this.horaTermino = horaTermino;
+        this.dia = dia;
+        this.rangoHora = rangoHora;
     }
 
     public Horario() {
@@ -51,10 +51,10 @@ public class Horario {
     private Sala sala;
     
     @NotNull (message = "Campo Obligatorio")
-    private Time horaInicio;
+    private int dia;
     
     @NotNull (message = "Campo Obligatorio")
-    private Time horaTermino;
+    private int rangoHora;
 
     public int getId() {
         return id;
@@ -80,21 +80,23 @@ public class Horario {
         this.sala = sala;
     }
 
-    public Time getHoraInicio() {
-        return horaInicio;
+    public int getDia() {
+        return dia;
     }
 
-    public void setHoraInicio(Time horaInicio) {
-        this.horaInicio = horaInicio;
+    public void setDia(int dia) {
+        this.dia = dia;
     }
 
-    public Time getHoraTermino() {
-        return horaTermino;
+    public int getRangoHora() {
+        return rangoHora;
     }
 
-    public void setHoraTermino(Time horaTermino) {
-        this.horaTermino = horaTermino;
+    public void setRangoHora(int rangoHora) {
+        this.rangoHora = rangoHora;
     }
+
+    
     
  
     
