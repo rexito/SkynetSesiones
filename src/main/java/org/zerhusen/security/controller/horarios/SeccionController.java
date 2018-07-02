@@ -84,4 +84,10 @@ public class SeccionController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    
+     @CrossOrigin
+    @RequestMapping(value = "/skynet/horario/carrera/{id}", method = GET)
+    public Collection<Seccion> getSeccionByCarrera(@PathVariable Integer id) {
+       return SeccionRepository.listaSeccionByCarrera(id);
+    }
 }

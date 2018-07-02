@@ -20,8 +20,7 @@ public interface HorarioRepository extends JpaRepository<Horario, Integer>{
     @Query(value = "select nombre from asignatura where id_seccion = any (select id from seccion where id_carrera = any (select id from carrera where id = ?1))", nativeQuery = true)
     List<Seccion> listaAsignaturasBySeccion(int id);
     
-    @Query(value = "select * from seccion where id_carrera = any (select id from carrera where id = ?1)", nativeQuery = true)
-    List<Seccion> listaSeccionByCarrera(int id);
+
     
     @Query(value = "select * from horario where id_sala = ?1", nativeQuery = true)
     List<Horario> listaHorarioBySala (int id);
