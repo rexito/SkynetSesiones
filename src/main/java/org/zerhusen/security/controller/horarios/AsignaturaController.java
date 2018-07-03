@@ -25,6 +25,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.zerhusen.model.horarios.Seccion;
+import org.zerhusen.security.repository.horarios.SeccionRepository;
 
 /**
  *
@@ -85,5 +87,11 @@ public class AsignaturaController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+    
+     @CrossOrigin
+    @RequestMapping(value = "/skynet/asignatura/seccion/{id}", method = GET)
+    public Collection<Asignatura> getAsignaturaBySeccionByCarrera(@PathVariable Integer id) {
+       return AsignaturaRepository.listaAsignaturasBySeccion(id);
     }
 }

@@ -4,23 +4,19 @@
  * and open the template in the editor.
  */
 package org.zerhusen.security.repository.horarios;
+
 import java.util.List;
-import org.zerhusen.model.horarios.Horario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.zerhusen.model.horarios.Sala;
-import org.zerhusen.model.horarios.Seccion;
+import org.zerhusen.model.horarios.Dia;
 
 /**
  *
  * @author don_w
  */
-public interface HorarioRepository extends JpaRepository<Horario, Integer>{
+public interface DiaRepository extends JpaRepository<Dia, Integer>{
     
-
+     @Query(value = "select * from Dia where nombre <> 'Default' ORDER BY `dia`.`id` DESC", nativeQuery = true)
+     List<Dia> listaTodo();
     
-
-    
-    @Query(value = "select * from horario where id_sala = ?1", nativeQuery = true)
-    List<Horario> listaHorarioBySala (int id);
 }
