@@ -21,7 +21,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 public class Horario {
-    public Horario (int id,Asignatura asignatura,Sala sala, int dia, int rangoHora){
+    public Horario (int id,Asignatura asignatura,Sala sala, Dia dia, Timeslot rangoHora){
         this.id = id;
         this.asignatura = asignatura;
         this.sala = sala;
@@ -51,10 +51,14 @@ public class Horario {
     private Sala sala;
     
     @NotNull (message = "Campo Obligatorio")
-    private int dia;
+    @ManyToOne
+    @JoinColumn(name = "id_dia")
+    private Dia dia;
     
     @NotNull (message = "Campo Obligatorio")
-    private int rangoHora;
+    @ManyToOne
+    @JoinColumn (name = "id_rangoHora")
+    private Timeslot rangoHora;
 
     public int getId() {
         return id;
@@ -80,19 +84,19 @@ public class Horario {
         this.sala = sala;
     }
 
-    public int getDia() {
+    public Dia getDia() {
         return dia;
     }
 
-    public void setDia(int dia) {
+    public void setDia(Dia dia) {
         this.dia = dia;
     }
 
-    public int getRangoHora() {
+    public Timeslot getRangoHora() {
         return rangoHora;
     }
 
-    public void setRangoHora(int rangoHora) {
+    public void setRangoHora(Timeslot rangoHora) {
         this.rangoHora = rangoHora;
     }
 
