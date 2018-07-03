@@ -17,6 +17,6 @@ import org.zerhusen.model.horarios.Timeslot;
  */
 public interface TimeslotRepository extends JpaRepository<Timeslot, Integer>{
     
-    @Query(value = "select * from Timeslot where nombre <> 'Default' ORDER BY `timeslot`.`id` DESC", nativeQuery = true)
+    @Query(value = "select * from Timeslot where start <> 'Default' ORDER BY `timeslot`.`id` ASC", nativeQuery = true)
      List<Timeslot> listaTodo();
 }

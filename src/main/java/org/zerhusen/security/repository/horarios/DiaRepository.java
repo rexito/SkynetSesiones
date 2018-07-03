@@ -16,7 +16,7 @@ import org.zerhusen.model.horarios.Dia;
  */
 public interface DiaRepository extends JpaRepository<Dia, Integer>{
     
-     @Query(value = "select * from Dia where nombre <> 'Default' ORDER BY `dia`.`id` DESC", nativeQuery = true)
+     @Query(value = "select * from Dia where nombre <> 'Default' ORDER BY `dia`.`id` ASC", nativeQuery = true)
      List<Dia> listaTodo();
     
 }
