@@ -31,7 +31,7 @@ import org.zerhusen.security.repository.horarios.DiaRepository;
  */
 
 
-//sacowe
+//comentario
 @RestController
 public class DiaController {
     
