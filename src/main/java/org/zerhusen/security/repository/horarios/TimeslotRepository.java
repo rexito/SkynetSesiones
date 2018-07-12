@@ -19,4 +19,7 @@ public interface TimeslotRepository extends JpaRepository<Timeslot, Integer>{
     
     @Query(value = "select * from Timeslot where start <> 'Default' ORDER BY `timeslot`.`id` ASC", nativeQuery = true)
      List<Timeslot> listaTodo();
+     
+     @Query(value = "select * from Timeslot where jornada = ?1", nativeQuery = true)
+     List<Timeslot> getTimeslotByJornada(int id);
 }

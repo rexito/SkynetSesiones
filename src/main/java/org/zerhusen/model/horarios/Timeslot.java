@@ -7,7 +7,10 @@ package org.zerhusen.model.horarios;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -24,14 +27,17 @@ public class Timeslot {
     
     private String end;
     
+    private int jornada;
+    
     public Timeslot(){
     
     }
 
-    public Timeslot(int id, String start, String end) {
+    public Timeslot(int id, String start, String end, int jornada) {
         this.id = id;
         this.start = start;
         this.end = end;
+        this.jornada = jornada;
     }
 
     public int getId() {
@@ -56,6 +62,14 @@ public class Timeslot {
 
     public void setEnd(String end) {
         this.end = end;
+    }
+
+    public int getJornada() {
+        return jornada;
+    }
+
+    public void setJornada(int jornada) {
+        this.jornada = jornada;
     }
     
     

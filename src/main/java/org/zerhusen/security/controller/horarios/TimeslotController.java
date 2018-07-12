@@ -23,7 +23,6 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.zerhusen.model.horarios.Dia;
 import org.zerhusen.model.horarios.Timeslot;
 import org.zerhusen.security.repository.horarios.TimeslotRepository;
 
@@ -40,20 +39,20 @@ public class TimeslotController {
     @PostConstruct
     public void init() throws ParseException{
         if(repository.findAll() != null){
-            repository.save(new Timeslot(1,"08:30","09:15"));
-            repository.save(new Timeslot(2,"09:15","10:00"));
-            repository.save(new Timeslot(3,"10:00","10:45"));
-            repository.save(new Timeslot(4,"10:45","11:30"));
-            repository.save(new Timeslot(5,"11:30","12:15"));
-            repository.save(new Timeslot(6,"12:15","13:00"));
-            repository.save(new Timeslot(7,"13:00","13:45"));
-            repository.save(new Timeslot(8,"13:45","14:30"));
-            repository.save(new Timeslot(9,"14:30","15:15"));
-            repository.save(new Timeslot(10,"15:15","16:00"));
-            repository.save(new Timeslot(11,"16:00","16:45"));
-            repository.save(new Timeslot(12,"16:45","17:30"));
-            repository.save(new Timeslot(13,"17:30","18:15"));
-            repository.save(new Timeslot(14,"18:15","19:00"));
+            repository.save(new Timeslot(1,"08:30","09:15",1));
+            repository.save(new Timeslot(2,"09:15","10:00",1));
+            repository.save(new Timeslot(3,"10:00","10:45",1));
+            repository.save(new Timeslot(4,"10:45","11:30",1));
+            repository.save(new Timeslot(5,"11:30","12:15",1));
+            repository.save(new Timeslot(6,"12:15","13:00",1));
+            repository.save(new Timeslot(7,"13:00","13:45",1));
+            repository.save(new Timeslot(8,"13:45","14:30",2));
+            repository.save(new Timeslot(9,"14:30","15:15",2));
+            repository.save(new Timeslot(10,"15:15","16:00",2));
+            repository.save(new Timeslot(11,"16:00","16:45",2));
+            repository.save(new Timeslot(12,"16:45","17:30",2));
+            repository.save(new Timeslot(13,"17:30","18:15",2));
+            repository.save(new Timeslot(14,"18:15","19:00",2));
             
         }
     }
@@ -107,6 +106,12 @@ public class TimeslotController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+    
+    @CrossOrigin
+    @RequestMapping(value = "/skynet/timeslot/jornada/{id}", method = GET)
+    public Collection<Timeslot> timeslotByJornada (@PathVariable Integer id){
+        return repository.getTimeslotByJornada(id);
     }
     
 }
