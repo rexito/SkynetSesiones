@@ -96,4 +96,10 @@ public class HorarioController {
         return HorarioRepository.listaHorarioBySala(id);
     }
     
+     @CrossOrigin
+    @RequestMapping(value = "/skynet/horario/timeslot/{id}", method = GET)
+    public Collection<Horario> listaHorarioByJornada (@PathVariable Integer id){
+        return HorarioRepository.listaHorariosByJornada(id);
+    }
+    
 }
